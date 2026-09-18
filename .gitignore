@@ -1,0 +1,11 @@
+# Python Virtual Environment
+venv/
+
+# Python Cache Files
+__pycache__/
+*/__pycache__/
+*/*.pyc
+
+# Environment / Secret Files
+gitignore.env
+.env
