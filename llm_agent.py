@@ -3,7 +3,6 @@ import json
 import requests
 from dotenv import load_dotenv
 
-# gitignore.env ফাইল থেকে API Key লোড করা
 load_dotenv("gitignore.env")
 api_key_raw = os.getenv("GROQ_API_KEY")
 
@@ -25,7 +24,6 @@ def get_working_model():
         model_ids = [m["id"] for m in models]
         print(f"Available models in your account: {model_ids}\n")
         
-        # 'guard', 'vision' ইত্যাদি বাদ দিয়ে আসল চ্যাট মডেল খোঁজা
         for m_id in model_ids:
             mid = m_id.lower()
             if "guard" not in mid and "vision" not in mid and "whisper" not in mid and "tool" not in mid:
@@ -107,7 +105,6 @@ def interpret_operator_notes(notes: list[str]) -> list[dict]:
             print(f"Response details: {response.text}")
         return []
 
-# লোকালি টেস্ট করার জন্য
 if __name__ == "__main__":
     sample_notes = [
         "Solar output will drop to about 20% from 1 PM to 3 PM.",

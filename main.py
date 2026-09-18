@@ -12,18 +12,14 @@ def health_check():
 @app.post("/optimize-energy", response_model=OptimizeResponse)
 def optimize_energy(request: OptimizeRequest):
     try:
-        # Step 1: LLM-কে দিয়ে ন্যাচারাল ল্যাঙ্গুয়েজ নোটস প্রসেস করা
         raw_directives = interpret_operator_notes(request.operator_notes)
         
-        # Step 2: LLM এর আউটপুট Pydantic দিয়ে ভ্যালিডেট করা (Guardrails)
         directives = []
         for d in raw_directives:
             directives.append(DirectiveInterpretation(**d))
             
-        # Step 3: Math Optimizer দিয়ে ২৪ ঘণ্টার বেস্ট প্ল্যান বের করা
         result = solve_gridwise(request, directives)
         
-        # Step 4: ফাইনাল আউটপুট রিটার্ন করা
         return OptimizeResponse(
             scenario_id=request.scenario_id,
             directive_interpretation=directives,
@@ -34,5 +30,4 @@ def optimize_energy(request: OptimizeRequest):
             plan_summary="LLM successfully extracted directives. Math optimizer generated the lowest cost schedule complying with all constraints."
         )
     except Exception as e:
-        # সিস্টেম ক্র্যাশ না করে সেফ ফেলিউর রিটার্ন করবে
         raise HTTPException(status_code=500, detail=str(e))

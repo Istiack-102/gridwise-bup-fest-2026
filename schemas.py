@@ -1,8 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 
-# --- Input Models (Request Schema) ---
-
 class HourEntry(BaseModel):
     hour: int = Field(..., ge=0, le=23)
     demand_kwh: float
@@ -22,8 +20,6 @@ class OptimizeRequest(BaseModel):
     hours: List[HourEntry] = Field(..., min_length=24, max_length=24)
     battery: Battery
 
-
-# --- Output Models (Response Schema) ---
 
 class StructuredAdjustment(BaseModel):
     hours: Optional[List[int]] = None
