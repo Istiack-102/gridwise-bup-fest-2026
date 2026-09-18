@@ -82,4 +82,4 @@ Developer:
 1. MD Istiack Ahmed (Bangladesh University of Professionals)
 2. MD Nokibur Rahman (Bangladesh University of Professionals)
 3. MD Sabbir Hossion (Bangladesh University of Professionals)
-4. Abdus Salam Gifari (Bangladesh University of Professionals)# gridwise-bup-fest-2026
+4. Abdus Salam Gifari (Bangladesh University of Professionals)
