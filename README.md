@@ -22,9 +22,9 @@ BUP fest/
 ## ⚙️ Installation & Setup Guide
 
 1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/your-username/gridwise-energy-api.git](https://github.com/your-username/gridwise-energy-api.git)
-   cd gridwise-energy-api
+
+git clone https://github.com/Istiack-102/gridwise-bup-fest-2026.git
+cd gridwise-bup-fest-2026
 
 
 
