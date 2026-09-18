@@ -10,6 +10,8 @@ GridWise holo BUP CSE Fest 2026 Hackathon (Online Preliminary)-er jonno toiri ko
 - **Data Validation:** Pydantic
 
 ## 📂 Project Structure
+
+```text
 BUP fest/
 ├── main.py          # FastAPI application & endpoints
 ├── solver.py        # PuLP mathematical optimization logic
